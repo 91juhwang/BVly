@@ -1,0 +1,7 @@
+<h1>Welcome to BeenVerly!!</h1>
+
+<%= form_tag("/urls", method: "post") do %>
+  <%= label_tag :url, "I want to shorten: " %>
+  <%= text_field_tag :url, nil, placeholder: 'www.this-url.com' %>
+  <%= submit_tag('Shorten!') %>
+<% end %>
