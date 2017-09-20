@@ -16,7 +16,10 @@ ActiveRecord::Schema.define(version: 20170920163156) do
   enable_extension "plpgsql"
 
   create_table "urls", force: :cascade do |t|
-    t.string "url"
+    t.string  "full_url"
+    t.integer "access_count", default: 0
+    t.index ["access_count"], name: "index_urls_on_access_count", using: :btree
+    t.index ["full_url"], name: "index_urls_on_full_url", unique: true, using: :btree
   end
 
 end
