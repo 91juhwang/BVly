@@ -1,25 +1,29 @@
 class UrlsController < ApplicationController
+  before_action :find_url, except: [:create, :index]
   def index
   end
 
   def create
-    @url = Url.find_or_create_by(full_url: url_params['full_url'])
-    redirect_to url_path(@url.id)
+    full_url = Url.url_to_external(url_params['full_url'])
+    url = Url.find_or_create_by(full_url: full_url)
+    redirect_to url_path(url.id)
   end
 
   def show
-    url = Url.find(params[:id])
-    @shorten_url = url.id.to_s(32)
+    @original_url = @found_url.full_url
+    @encoded_url = @found_url.id.to_s(32)
   end
 
   def redirect
-    url_id = params[:url_id].to_i(32)
-    original_url = Url.find(url_id).full_url
-    # way to rediret without the host
-    redirect_to "https://#{original_url}"
+    decoded_url = params[:id].to_i(32)
+    redirect_to Url.find(decoded_url).full_url
   end
 
   private
+
+  def find_url
+    @found_url = Url.find(params[:id])
+  end
 
   def url_params
     params.require(:url).permit(:full_url)
