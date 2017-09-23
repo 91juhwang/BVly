@@ -42,17 +42,15 @@ In order to keep track of the generated URLs, database stores the full string of
 
 In order to achieve this requirement, the base 36 string conversion of the primary key was used.
 
-The primary key will ensure the look up and storage of the data, while the base36 conversion shortens the URL.
-
-The requirement asked for the `shortest possible length` and the base64 conversion is more suitable to achieve this goal instead of base36. However, base 64 usually contains upper and lower cases of the alphabets along with special character, which the trade off for shortening the url did not seem to be worth more than the lost of user experiences.
+The requirement asked for the `shortest possible length` and the base64 conversion is more suitable to achieve this goal than base36. However, base64 usually contains upper and lower cases of the alphabets along with special character, which the trade off for shortening the url did not seem to be worth more than the lost of user experiences.
 
   > Ex.1) the lower and uppercase will make it difficult for a person to read out loud for someone else.
 
   > Ex.2) Looks much cleaner when all aphabets are in same consistent form.
 
-Also, Ruby's core library already provides very simple and nice conversion method, and why invent the wheel again? It wouldn't be significantly shorter, and base36 also have benefits mentioned above.
+Also, Ruby's core library already provides very simple and nice conversion method(`to_s(36)`). Why invent the wheel again? It wouldn't be significantly shorter, and base36 also have benefits mentioned above.
 
-However, just for the representation of making the shorter URL than base32, below codes were added.
+However, to represent the method of making shorter URLs, below code and explanation was added.
 
 #### Encoding:
 ```ruby
@@ -129,6 +127,8 @@ With the above method, one is able to be flexible about which base system one wa
 ### Handling Duplicate URLs:
 
 Instead of inserting a new record for an already existing URL, the matching URL will be searched by the indexced column and will return the data.
+
+In order to achieve this the format of URL was detected and was transformed into lowercase for consistency.
 
 ### Various Format of URL Detection:
 
