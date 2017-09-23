@@ -10,6 +10,8 @@ This application will help you manage URLs that are just too long.
 
 * Run `bundle install` then `rails s`
 
+* Run `cp env.sample .env` then change environment variables accordingly.
+
 * or just visit [this link](www.) to see the working application.
 
 ## Requirements && Features
