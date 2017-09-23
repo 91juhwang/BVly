@@ -14,6 +14,8 @@ This application will help you manage URLs that are just too long.
 
 ## Requirements && Features
 
+### Core Features:
+
 * Any user is able to generate a shorten URL.
 
 * Shorten url takes the user back to the original link.
@@ -22,7 +24,7 @@ This application will help you manage URLs that are just too long.
 
 * Users are able to see the top 100 board with the most frequently accessed URLs.
 
-#### Extra Features
+### Extra Features:
 
 * Signed up user is able to generate a shorten URL and keep track of it.
 
@@ -32,11 +34,11 @@ This application will help you manage URLs that are just too long.
 
 ## Implementation
 
-#### Key/Value : ID/URL
+### Key/Value : ID/URL:
 
 In order to keep track of the generated URLs, database stores the full string of original URLs. These are easily and quickly accessbile via the primary key(ID) or the encoded Key of the table.
 
-#### Shortest Possible Length
+### Shortest Possible Length:
 
 In order to achieve this requirement, the base 36 string conversion of the primary key was used.
 
@@ -52,7 +54,7 @@ Also, Ruby's core library already provides very simple and nice conversion metho
 
 However, just for the representation of making the shorter URL than base32, below codes were added.
 
-Encoding:
+#### Encoding:
 ```ruby
 BASE_62_VALUES = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 def encode_base(num, base = 62)
@@ -99,7 +101,7 @@ Therefore,
 ```
 Which equals to `dlt` in Base62 conversion.
 
-Decoding:
+#### Decoding:
 ```ruby
 def decode_base(value, base = 62)
   base_10_num = 0
@@ -124,11 +126,11 @@ end
 
 With the above method, one is able to be flexible about which base system one wants to use.
 
-#### Handling Duplicate URLs
+### Handling Duplicate URLs:
 
 Instead of inserting a new record for an already existing URL, the matching URL will be searched by the indexced column and will return the data.
 
-#### Various Format of URL Detection
+### Various Format of URL Detection:
 
 There are multiple ways to write a same URL in terms of the end user.
 
@@ -159,3 +161,8 @@ Explanation:
 
 7. Step 4,5,6 will be replaced by the `\2\`, `http` or `https` depending on the second paranethesis detection. The last part will be replaced by `\4\`, which is any characters after `.`
 
+## Contact
+
+91juhwang@gmail.com
+
+[Portfolio](https://www.james-hwang.com)
