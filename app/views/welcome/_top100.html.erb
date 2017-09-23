@@ -6,7 +6,7 @@
     <% @urls.each.with_index(1) do |url, i| %>
       <div class="row col-md-10 justify-content-center">
         <ol class="ol-100-lists">
-          <%= i %>. <%= link_to "localhost:3000/#{url.id.to_s(36)}", url.full_url %>
+          <%= i %>. <%= link_to "#{ENV['DOMAIN_ADDRESS']}/#{url.id.to_s(36)}", url.full_url %>
         </ol>
       </div>
     <% end %>
