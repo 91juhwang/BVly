@@ -3,7 +3,7 @@
   <div class="col-md-4">
     <% @urls.each.with_index(1) do |url, i| %>
       <ol>
-        <%= i %>. <%= link_to "#{url.full_url}", url.full_url %>
+        <%= i %>. <%= link_to "localhost:3000/#{url.id.to_s(36)}", url.full_url %>
       </ol>
     <% end %>
   </div>
