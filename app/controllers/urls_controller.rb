@@ -5,7 +5,7 @@ class UrlsController < ApplicationController
 
   def create
     full_url = Url.url_to_external(url_params['full_url'])
-    url = Url.find_or_create_by(full_url: full_url)
+    url = Url.find_or_create_by(full_url: full_url.downcase)
     redirect_to url_path(url.id)
   end
 
