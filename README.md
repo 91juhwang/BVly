@@ -128,8 +128,6 @@ With the above method, one is able to be flexible about which base system one wa
 
 Instead of inserting a new record for an already existing URL, the matching URL will be searched by the indexced column and will return the data.
 
-In order to achieve this the format of URL was detected and was transformed into lowercase for consistency.
-
 ### Various Format of URL Detection:
 
 There are multiple ways to write a same URL in terms of the end user.

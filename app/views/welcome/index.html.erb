@@ -1,21 +1,24 @@
 <div class="container-fluid">
 
-  <div class="row">
-    <div class="col-md-8 ml-auto">
-      <h1>Welcome to BVly!!</h1>
-    </div>
+  <div class="row justify-content-center">
+    <h1>Welcome to BVly!!</h1>
   </div>
 
-  <div class="row">
-    <div class="col-md-8 ml-auto welcome_page_form">
-      <%= form_for :url, url: urls_path do |f| %>
-        <div>
-          I want to shorten:
-          <%= f.text_field :full_url, placeholder: 'www.this-url.com' %>
-          <%= f.submit 'Create', remote: true %>
-        </div>
-      <% end %>
-    </div>
+  <br>
+
+  <div class="row justify-content-center">
+    <%= form_for :url, url: urls_path, remote: true do |f| %>
+      <div>
+        I want to shorten:
+        <%= f.text_field :full_url, placeholder: 'www.this-url.com', id: 'url-text-box' %>
+        <%= f.submit "Create" %>
+      </div>
+    <% end %>
   </div>
+
+  <div class="row justify-content-center" id="shorten-url-div">
+  </div>
+
+  <%= render partial: 'top100' %>
 </div>
 

@@ -1,0 +1,9 @@
+var shorten_div = document.getElementById('shorten-url-div')
+var url_text_box = document.getElementById('url-text-box')
+
+shorten_div.innerHTML = '\
+  <p>Your Shortened URL: \
+    <%=j link_to "http://localhost:3000/#{@encoded_url}", "http://localhost:3000/#{@encoded_url}" %>\
+  </p>\
+'
+url_text_box.value = ''
