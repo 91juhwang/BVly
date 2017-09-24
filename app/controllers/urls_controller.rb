@@ -8,6 +8,7 @@ class UrlsController < ApplicationController
   def create
     full_url = Url.url_to_external(url_params['full_url'])
     url_record = Url.find_or_create_by(full_url: full_url)
+    UserUrl.create(user: current_user, url: url_record) if user_signed_in?
     @original_url = url_record.full_url
     @encoded_url = url_record.id.to_s(36)
     respond_to { |format| format.js }
