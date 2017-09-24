@@ -13,9 +13,6 @@ class UrlsController < ApplicationController
     respond_to { |format| format.js }
   end
 
-  def show
-  end
-
   def redirect
     decoded_url = params[:id].to_i(36)
     found_url = Url.find(decoded_url)
