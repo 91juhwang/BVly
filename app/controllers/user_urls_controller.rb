@@ -1,0 +1,3 @@
+class UserUrlsController < ApplicationController
+
+end
