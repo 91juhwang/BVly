@@ -12,7 +12,7 @@ This application will help you manage URLs that are just too long.
 
 * Run `cp env.sample .env` then change environment variables accordingly.
 
-* or just visit [this link](www.) to see the working application.
+* or just visit [this link](https://bvly.herokuapp.com/) to see the working application.
 
 ## Requirements && Features
 
