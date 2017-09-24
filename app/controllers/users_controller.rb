@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   private
 
   def recent_hundred_links
-    @urls = Url.all.order(:created_at).limit(100)
+    @urls = UserUrls.all.order(:created_at).limit(100)
   end
 
   def url_params

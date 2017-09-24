@@ -27,6 +27,22 @@
   <div class="top-100-wrapper row justify-content-center">
     <div class="col-md-12" id="top100-box">
       <h4 align="center" class="top-100-h4">TOP 100 MOST VISITED WEBSITES</h4>
+      <p align="center">Keep track of which URLs are most visited!</p>
+      <br>
+        <div class="row col-md-12">
+          <% @urls.each.with_index(1) do |url, i| %>
+            <div class="ol-100-lists col-md-4">
+              <%= i %>. <%= link_to "#{ENV['DOMAIN_ADDRESS']}/#{url.id.to_s(36)}", "#{ENV['DOMAIN_ADDRESS']}/#{url.id.to_s(36)}", taget: :_blank %> - visited: <%= url.access_count%>
+            </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
+
+  <div class="top-100-wrapper recent-top-100 row justify-content-center">
+    <div class="col-md-12" id="top100-box">
+      <h4 align="center" class="top-100-h4">RECENT 100 URLS</h4>
+      <p align="center">100 links you've recently created</p>
       <br>
         <div class="row col-md-12">
           <% @urls.each.with_index(1) do |url, i| %>

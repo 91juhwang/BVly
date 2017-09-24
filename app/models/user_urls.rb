@@ -1,4 +1,4 @@
-class UserUrl < ActiveRecord::Base
+class UserUrls < ActiveRecord::Base
   belongs_to :user
 
   def self.url_to_external(text)
