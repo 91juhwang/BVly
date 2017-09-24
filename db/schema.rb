@@ -23,12 +23,11 @@ ActiveRecord::Schema.define(version: 20170924051420) do
   end
 
   create_table "user_urls", force: :cascade do |t|
-    t.string   "full_url"
-    t.integer  "access_count", default: 0
-    t.string   "personal_url"
     t.integer  "user_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.integer  "url_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["url_id"], name: "index_user_urls_on_url_id", using: :btree
     t.index ["user_id"], name: "index_user_urls_on_user_id", using: :btree
   end
 

@@ -30,8 +30,6 @@ This application will help you manage URLs that are just too long.
 
 * Signed up user is able to generate a shorten URL and keep track of it.
 
-* Signed up user is able to generate their own unique shorten URLs.
-
 * A Bot that auto populates the DB.
 
 ## Implementation
