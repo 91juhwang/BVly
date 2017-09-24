@@ -1,5 +1,8 @@
 class UrlsController < ApplicationController
+  before_action :top_hundred_records, only: [:index, :create]
+
   def index
+    @url = Url.new
   end
 
   def create
@@ -7,7 +10,6 @@ class UrlsController < ApplicationController
     url_record = Url.find_or_create_by(full_url: full_url)
     @original_url = url_record.full_url
     @encoded_url = url_record.id.to_s(36)
-    @urls = Url.all.order(:access_count).limit(100).reverse
     respond_to { |format| format.js }
   end
 
@@ -22,6 +24,10 @@ class UrlsController < ApplicationController
   end
 
   private
+
+  def top_hundred_records
+    @urls = Url.all.order(:access_count).limit(100).reverse
+  end
 
   def url_params
     params.require(:url).permit(:full_url)

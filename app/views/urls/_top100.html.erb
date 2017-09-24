@@ -4,9 +4,9 @@
     <h3 align="center">Top 100 Most Visited</h3>
     <br>
     <% @urls.each.with_index(1) do |url, i| %>
-      <div class="row col-md-10 justify-content-center">
+      <div class="row col-md-12 justify-content-center">
         <ol class="ol-100-lists">
-          <%= i %>. <%= link_to "#{ENV['DOMAIN_ADDRESS']}/#{url.id.to_s(36)}", url.full_url %>
+          <%= i %>. <%= link_to "#{ENV['DOMAIN_ADDRESS']}/#{url.id.to_s(36)}", "#{ENV['DOMAIN_ADDRESS']}/#{url.id.to_s(36)}", taget: :_blank %>, Visited: <%= url.access_count%>
         </ol>
       </div>
     <% end %>

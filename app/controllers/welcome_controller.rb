@@ -1,6 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @url = Url.new
-    @urls = Url.all.order(:access_count).limit(100).reverse
+    redirect_to urls_path
   end
 end
