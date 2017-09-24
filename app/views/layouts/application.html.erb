@@ -19,7 +19,7 @@
       <% if user_signed_in? %>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to 'My BVLinks', urls_path, class: 'nav-link' %>
+            <%= link_to 'My BVLinks', users_path(current_user.id), class: 'nav-link' %>
           </li>
         </ul>
         <div>
@@ -27,9 +27,6 @@
         </div>
       <% else %>
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <%= link_to 'My BV-Links', urls_path, class: 'nav-link' %>
-          </li>
         </ul>
         <div>
           <%= link_to "Sign in", new_user_session_path, class: "btn btn-outline-warning", style: "margin-right: 15px;" %>

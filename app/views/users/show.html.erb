@@ -1,0 +1,41 @@
+<div id="url-index-wrapper">
+
+  <div class="main-form-wrapper">
+    <div class="row col-md-12 ml-auto justify-content-center">
+      <h2>HI! <%=current_user.email.upcase%>,</h2>
+    </div>
+    <div class="row col-md-12 ml-auto justify-content-center">
+      <h2>WE ARE HERE TO KEEP YOUR EYES HAPPY!</h2>
+    </div>
+
+    <br>
+
+    <div class="row justify-content-center">
+      <%= form_for :url, url: urls_path, remote: true do |f| %>
+        <div class="row col-md-12 justify-content-center form-wrapper">
+          <div class="form-group" id="url-create-form">
+            <%= f.text_field :full_url, placeholder: 'http://www.url.com', id: 'url-text-box', class: "form-control" %>
+          </div>
+          <button type="submit" class="btn btn-primary btn-md block-margin btn-grey"> <strong>CREATE !</strong></button>
+        </div>
+      <% end %>
+    </div>
+    <div id="shorten-url-div">
+    </div>
+  </div>
+
+  <div class="top-100-wrapper row justify-content-center">
+    <div class="col-md-12" id="top100-box">
+      <h4 align="center" class="top-100-h4">TOP 100 MOST VISITED WEBSITES</h4>
+      <br>
+        <div class="row col-md-12">
+          <% @urls.each.with_index(1) do |url, i| %>
+            <div class="ol-100-lists col-md-4">
+              <%= i %>. <%= link_to "#{ENV['DOMAIN_ADDRESS']}/#{url.id.to_s(36)}", "#{ENV['DOMAIN_ADDRESS']}/#{url.id.to_s(36)}", taget: :_blank %> - visited: <%= url.access_count%>
+            </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
+
