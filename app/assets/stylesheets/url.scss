@@ -1,0 +1,53 @@
+#shorten-url-div {
+  margin-top: 10px;
+}
+
+#shorten-url-div p {
+  margin-top: inherit;
+}
+
+#url-create-form {
+  text-align: center;
+}
+.form-wrapper {
+  margin-left: 5px;
+}
+
+.block-margin {
+  display: block;
+  margin: auto;
+}
+
+#url-index-wrapper {
+  margin-top: 30px;
+}
+
+#main-form-wrapper {
+  width: 50%;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #343a40;
+}
+
+#main-form-wrapper h2 {
+  color: #F6F8FF;
+}
+
+.new-url-p {
+  background-color: #343a40;
+  color: #F6F8FF;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: -10px;
+  text-align: center;
+  padding: 20px;
+}
+
+.new-url-p a {
+  text-decoration: none;
+  color: #09E85E;
+}
+
+.new-url-p a:hover {
+  color: #F6F8FF;
+}

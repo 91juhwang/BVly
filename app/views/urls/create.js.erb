@@ -2,8 +2,10 @@ var shorten_div = document.getElementById('shorten-url-div')
 var url_text_box = document.getElementById('url-text-box')
 
 shorten_div.innerHTML = '\
-  <p>Your Shortened URL: \
+  <div class="new-url-p">\
+  <p>Your New URL: \
     <%=j link_to "#{ENV["DOMAIN_ADDRESS"]}/#{@encoded_url}", "#{ENV["DOMAIN_ADDRESS"]}/#{@encoded_url}", target: :_blank %>\
   </p>\
+  </div>\
 '
 url_text_box.value = ''
