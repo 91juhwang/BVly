@@ -5,7 +5,7 @@
       <div class="row col-md-12">
         <% @urls.each.with_index(1) do |url, i| %>
           <div class="ol-100-lists col-md-4">
-            <%= i %>. <%= link_to "#{ENV['DOMAIN_ADDRESS']}/#{url.id.to_s(36)}", "#{ENV['DOMAIN_ADDRESS']}/#{url.id.to_s(36)}", taget: :_blank %> - visited: <%= url.access_count%>
+            <%= i %>. <%= link_to "#{ENV['DOMAIN_ADDRESS']}/#{url.id.to_s(36)}", "#{ENV['DOMAIN_ADDRESS']}/#{url.id.to_s(36)}", target: :_blank %> - visited: <%= url.access_count%>
           </div>
         <% end %>
       </div>
