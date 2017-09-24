@@ -22,32 +22,57 @@
   margin-top: 30px;
 }
 
-#main-form-wrapper {
-  width: 50%;
+.main-form-wrapper {
+  width: 70%;
   margin: 0 auto;
-  padding: 50px;
-  background-color: #343a40;
+  padding: 150px;
+  margin-bottom: 50px;
+  background-color: white;
+  border: 4px solid #ffc107;
 }
 
-#main-form-wrapper h2 {
-  color: #F6F8FF;
+.main-form-wrapper h2 {
+  color: #ffc107;
+  font-style: 'Roboto', sans-serif;
 }
 
 .new-url-p {
-  background-color: #343a40;
-  color: #F6F8FF;
-  width: 50%;
-  margin: 0 auto;
-  margin-top: -10px;
+  background-color: #FFFFFF;
+
   text-align: center;
-  padding: 20px;
+  padding-top: 20px;
 }
 
+.new-url-p {
+  color: rgba(0, 0, 0, 0.5);
+}
 .new-url-p a {
   text-decoration: none;
-  color: #09E85E;
+  color: #ffc107;
 }
 
 .new-url-p a:hover {
-  color: #F6F8FF;
+  color: lightskyblue;
+}
+
+.top-100-wrapper {
+  background-color: #ffc107;
+  padding-bottom: 50px;
+}
+
+.btn-grey {
+  background-color: rgba(67, 67, 67, 0.9) !important;
+  border: none;
+}
+
+.top-100-h4 {
+  margin-top: 50px;
+  color: white;
+}
+
+.ol-100-lists {
+  color: rgba(67, 67, 67, 0.9) !important;
+  text-align: center;
+  margin-top:10px;
+  margin-bottom: 10px;
 }

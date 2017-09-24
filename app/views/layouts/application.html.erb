@@ -3,12 +3,13 @@
   <head>
     <title>Bvly</title>
     <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <%= link_to "BV", root_path, class: "navbar-brand" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -22,7 +23,7 @@
           </li>
         </ul>
         <div>
-          <%= link_to "Sign out", destroy_user_session_path, class: "btn btn-outline-success", method: :delete %>
+          <%= link_to "Sign out", destroy_user_session_path, class: "btn btn-outline-warning", method: :delete %>
         </div>
       <% else %>
         <ul class="navbar-nav mr-auto">
@@ -31,10 +32,10 @@
           </li>
         </ul>
         <div>
-          <%= link_to "Sign in", new_user_session_path, class: "btn btn-outline-success", style: "margin-right: 15px;" %>
+          <%= link_to "Sign in", new_user_session_path, class: "btn btn-outline-warning", style: "margin-right: 15px;" %>
         </div>
         <div>
-          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-outline-success" %>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-outline-warning" %>
         </div>
       <% end %>
 

@@ -1,6 +1,6 @@
-<div class="container-fluid" id="url-index-wrapper">
+<div id="url-index-wrapper">
 
-  <div id="main-form-wrapper">
+  <div class="main-form-wrapper">
     <div class="row col-md-12 ml-auto justify-content-center">
       <h2>GENERATE A SHORT LINK, </h2>
     </div>
@@ -16,14 +16,14 @@
           <div class="form-group" id="url-create-form">
             <%= f.text_field :full_url, placeholder: 'http://www.url.com', id: 'url-text-box', class: "form-control" %>
           </div>
-          <button type="submit" class="btn btn-primary btn-sm block-margin"> CREATE !</button>
+          <button type="submit" class="btn btn-primary btn-md block-margin btn-grey"> <strong>CREATE !</strong></button>
         </div>
       <% end %>
     </div>
+    <div id="shorten-url-div">
+    </div>
   </div>
 
-  <div id="shorten-url-div">
-  </div>
 
   <%= render partial: 'top100' %>
 </div>

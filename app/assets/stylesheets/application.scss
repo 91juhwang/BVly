@@ -2,7 +2,9 @@
 @import "welcome";
 @import "url";
 
+* {
+  margin: 0px;
+}
 body {
-  margin-bottom: 100px;
-  background-color: #404E7C;
+  margin-bottom: 20px;
 }
