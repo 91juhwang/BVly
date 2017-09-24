@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   before_action :top_hundred_records, only: [:index, :create]
 
   def show
