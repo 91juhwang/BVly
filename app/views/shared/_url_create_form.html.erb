@@ -1,0 +1,13 @@
+<div class="row justify-content-center">
+  <%= form_for :url, url: urls_path, remote: true do |f| %>
+    <div class="row col-md-12 justify-content-center form-wrapper">
+      <div class="form-group" class="url-create-form">
+        <%= f.text_field :full_url, placeholder: 'http://www.url.com', id: 'url-text-box', class: "form-control" %>
+      </div>
+      <button type="submit" class="btn btn-primary btn-md block-margin btn-grey"> <strong>CREATE !</strong></button>
+    </div>
+  <% end %>
+</div>
+
+<div id="shorten-url-div">
+</div>

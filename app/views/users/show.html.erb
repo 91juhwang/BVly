@@ -10,42 +10,18 @@
 
     <br>
 
-    <div class="row justify-content-center">
-      <%= form_for :url, url: urls_path, remote: true do |f| %>
-        <div class="row col-md-12 justify-content-center form-wrapper">
-          <div class="form-group" id="url-create-form">
-            <%= f.text_field :full_url, placeholder: 'http://www.url.com', id: 'url-text-box', class: "form-control" %>
-          </div>
-          <button type="submit" class="btn btn-primary btn-md block-margin btn-grey"> <strong>CREATE !</strong></button>
-        </div>
-      <% end %>
-    </div>
-    <div id="shorten-url-div">
-    </div>
+    <%= render partial: 'shared/url_create_form' %>
   </div>
 
-  <div class="top-100-wrapper row justify-content-center">
-    <div class="col-md-12" id="top100-box">
-      <h4 align="center" class="top-100-h4">TOP 100 MOST VISITED WEBSITES</h4>
-      <p align="center">Keep track of which URLs are most visited!</p>
-      <br>
-        <div class="row col-md-12">
-          <% @urls.each.with_index(1) do |url, i| %>
-            <div class="ol-100-lists col-md-4">
-              <%= i %>. <%= link_to "#{ENV['DOMAIN_ADDRESS']}/#{url.id.to_s(36)}", "#{ENV['DOMAIN_ADDRESS']}/#{url.id.to_s(36)}", taget: :_blank %> - visited: <%= url.access_count%>
-            </div>
-          <% end %>
-        </div>
-    </div>
-  </div>
+  <%= render partial: 'shared/top100' %>
 
   <div class="top-100-wrapper recent-top-100 row justify-content-center">
     <div class="col-md-12" id="top100-box">
-      <h4 align="center" class="top-100-h4">RECENT 100 URLS</h4>
-      <p align="center">100 links you've recently created</p>
+      <h4 align="center" class="top-100-h4">RECENT 30 URLS</h4>
+      <p align="center">30 links you've recently created</p>
       <br>
         <div class="row col-md-12">
-          <% @urls.each.with_index(1) do |url, i| %>
+          <% @recent_urls.each.with_index(1) do |url, i| %>
             <div class="ol-100-lists col-md-4">
               <%= i %>. <%= link_to "#{ENV['DOMAIN_ADDRESS']}/#{url.id.to_s(36)}", "#{ENV['DOMAIN_ADDRESS']}/#{url.id.to_s(36)}", taget: :_blank %> - visited: <%= url.access_count%>
             </div>

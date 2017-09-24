@@ -1,29 +1,17 @@
 <div id="url-index-wrapper">
-
   <div class="main-form-wrapper">
+
     <div class="row col-md-12 ml-auto justify-content-center">
       <h2>GENERATE A SHORT LINK, </h2>
     </div>
+
     <div class="row col-md-12 ml-auto justify-content-center">
       <h2>KEEP YOUR EYES HAPPY!</h2>
     </div>
 
     <br>
-
-    <div class="row justify-content-center">
-      <%= form_for :url, url: urls_path, remote: true do |f| %>
-        <div class="row col-md-12 justify-content-center form-wrapper">
-          <div class="form-group" id="url-create-form">
-            <%= f.text_field :full_url, placeholder: 'http://www.url.com', id: 'url-text-box', class: "form-control" %>
-          </div>
-          <button type="submit" class="btn btn-primary btn-md block-margin btn-grey"> <strong>CREATE !</strong></button>
-        </div>
-      <% end %>
-    </div>
-    <div id="shorten-url-div">
-    </div>
+    <%= render partial: 'shared/url_create_form' %>
   </div>
-
-  <%= render partial: 'top100' %>
+  <%= render partial: 'shared/top100' %>
 </div>
 
