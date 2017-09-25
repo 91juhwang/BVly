@@ -7,11 +7,9 @@ This application will help you manage URLs that are just too long.
 ## Usage & Install
 
 * Clone the repository
-
 * Run `bundle install` then `rails s`
-
 * Run `cp env.sample .env` then change environment variables accordingly.
-
+* Run `rails data_populator` If you would like to auto populate the database via task script.
 * or just visit [this link](https://bvly.herokuapp.com/) to see the working application.
 
 ## Requirements && Features
@@ -19,11 +17,8 @@ This application will help you manage URLs that are just too long.
 ### Core Features:
 
 * Any user is able to generate a short URL.
-
 * Shorten url takes the user back to the original address.
-
 * URL that is already in the database will return the existing record.
-
 * User is able to see the top 100 board with the most frequently accessed URLs.
 
 ### Extra Features:
@@ -161,7 +156,7 @@ The script runs in the below logic.
 1. Crawl and retrieve all the links in `https://moz.com/top500/pages`, which lists top 500 websites and domains.
 2. For each of those URL, check to make sure each URL returns the correct status code.
 3. If the URL exists and does not return 4xx errors, it will `find_or_create_by` a new `Url` record.
-4. It will rescue and will not populate bad URLs.
+4. It will rescue and will not populate bad URLs or URLs that take more than 10 seconds to check.
 
 ## Contact
 
