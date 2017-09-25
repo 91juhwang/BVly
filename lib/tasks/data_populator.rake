@@ -13,6 +13,7 @@ task data_populator: :environment do
   page_links.each_with_index do |link|
     begin
       Url.find_or_create_by(full_url: link) if data_populator_helper.url_exist?(link)
+      ap "#{link} -- was found or created."
     rescue
       ap 'Invalid URL or corrupted!'
     end
