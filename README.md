@@ -24,9 +24,7 @@ This application will help you manage URLs that are just too long.
 ### Extra Features:
 
 * Signed up user is able to generate a short URL and see top 30 recent creations.
-
 * User is able to keep track of their records due to the has_many through association between `Url`, `User`, and `UserUrl`.
-
 * A bot or rake task script that auto populates the database.
 
 ## Implementation
