@@ -1,5 +1,5 @@
 class UrlsController < ApplicationController
-  before_action :top_hundred_records, only: [:index, :create]
+  before_action :top_hundred_records, only: [:index]
 
   def index
     @url = Url.new
@@ -24,7 +24,7 @@ class UrlsController < ApplicationController
   private
 
   def top_hundred_records
-    @urls = Url.all.order(:access_count).limit(100).reverse
+    @urls = Url.all.order(access_count: :desc).limit(100)
   end
 
   def url_params

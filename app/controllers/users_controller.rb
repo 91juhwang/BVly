@@ -10,11 +10,11 @@ class UsersController < ApplicationController
   private
 
   def recent_hundred_links
-    @recent_urls = current_user.urls.all.order(:created_at).limit(100)
+    @recent_urls = current_user.urls.order(created_at: :desc).limit(30)
   end
 
   def top_hundred_links
-    @urls = current_user.urls.all.order(:access_count).limit(30).reverse
+    @urls = current_user.urls.order(access_count: :desc).limit(100)
   end
 
   def url_params
